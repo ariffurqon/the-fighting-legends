@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
+import {
+	BrowserRouter as Router,
+	Route
+} from 'react-router-dom'
+import Home from './Home'
+import Films from './Films'
+import Teams from './Teams'
+import Navbar from './Navbar'
 
 
 class App extends Component {
   render() {
     return (
-      <div>
-        The Fighting Legends
-      </div>
+      <Router>
+      	<div>
+      		<Navbar />
+
+      		<Route path='/' exact component={Home} />
+      		<Route path='/films' component={Films} />
+      		<Route path='/teams' component={Teams} />
+      	</div>
+      </Router>
     )
   }
 }
